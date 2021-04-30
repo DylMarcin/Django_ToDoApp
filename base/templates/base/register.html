@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<div class="header-bar">
+    <h1>Zarejestruj</h1>
+</div>
+
+
+<div class="card-body">
+<form method="POST">
+    {%csrf_token%}
+    <label>Nazwa Użytkownika</label>
+    {{form.username}}
+
+    <label>Hasło</label>
+    {{form.password1}}
+
+    <label>Powtórz hasło</label>
+    {{form.password2}}
+
+    
+    <input style="margin-top:10px" class="button" type="submit" value = "Zarejestruj"/>
+</form>
+
+
+<p>Masz już konto? <a href="{% url 'login' %}">Zaloguj</a></p>
+
+{% endblock content %}
+
+</div>

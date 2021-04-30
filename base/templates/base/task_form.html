@@ -1,0 +1,26 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Wróć</a>
+</div>
+
+
+<div class="card-body"> 
+    <form method="POST" action = "">
+        {%csrf_token%}  <!--Utworzenie tokenu pomagającego uniknąć krzyżowania połączeń -->
+        <label>Zadanie</label>
+        {{form.title}}
+
+        <label>Szczegóły</label>
+        {{form.description}}
+
+        <label>Ukończono
+        {{form.complete}} </label>
+        <input style="margin-top:10px" class="button" type="submit" value="Zatwierdź">
+    </form>
+</div>
+
+
+{% endblock content %}

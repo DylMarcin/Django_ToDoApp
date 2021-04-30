@@ -1,0 +1,24 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Zaloguj</h1>
+</div>
+
+<div class="card-body">
+
+<form method="POST">
+    {%csrf_token%}
+    <label>Nazwa użytkownika</label>
+    {{form.username}}
+
+    <label>Hasło</label>
+    {{form.password}} 
+    <input style="margin-top:10px" class="button" type="submit" value = "Zaloguj"/>
+</form>
+
+
+<p>Nie masz jeszcze konta? <a href="{% url 'register' %}">Zarejestruj</a></p>
+
+</div>
+{% endblock content %}
